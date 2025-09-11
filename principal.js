@@ -1,37 +1,48 @@
-           //muda o nome dessa desgraça
-           var sigma = document.querySelector(".subtitulo");
-			sigma.textContent = "meus Gestirlsons";
-			var aparecida = document.querySelector(".titulo");
-			aparecida.textContent = "Gestirlson Nutrição"
+//muda o nome dessa desgraça
+var sigma = document.querySelector(".subtitulo");
+sigma.textContent = "meus Gestirlsons";
+var aparecida = document.querySelector(".titulo");
+aparecida.textContent = "Gestirlson Nutrição"
 
-           //acessa o paulo (la ele)
+//acessa o paulo (la ele)
 
-            var paciente = document.querySelector("#primeiro-paciente");
+var pacientes = document.querySelectorAll(".paciente");
             
-            //vê o peso do paule (gordofobia)
-           
-            var tdPeso = paciente.querySelector(".info-peso");
-            var peso = tdPeso.textContent;
-            
-           //tamanho do paulo (la ele)
+for(var i = 0; i < pacientes.length; i++){
+  var paciente = pacientes[i];
+  //vê o peso do paulo (gordofobia)
+  var tdPeso = paciente.querySelector(".info-peso");
+  var peso = tdPeso.textContent;
+        
+      
+  //tamanho do paulo (la ele)
+  
+  var tdAlt = paciente.querySelector(".info-altura");
+  var altura = tdAlt.textContent;
 
-            var tdAlt = paciente.querySelector(".info-altura");
-            var altura = tdAlt.textContent;
+  //calcula o imc
+  
+  var imc = peso / (altura * altura);
+  
+  //variaveis certas
+  var pesoValido = true;
+  var alturaValida = true;
 
-            //coloca o imc dele na tabela e calcula
+  if (pesoValido && alturaValida){
+    var tdImc = paciente.querySelector(".info-imc");
+    tdImc.textContent = imc;
+  }
 
-            var imc = peso / (altura * altura);
-            var tdImc = paciente.querySelector(".info-imc");
-            tdImc.textContent = imc;
-
-            //avisa q o gordo ta pesado
-
-           if (peso < 0 || peso > 1000){
-            alert(" peso errado ")
-           }
-
-           //avisa q a arvore ta muito alta
-
-           if (altura < 0 || altura > 4.00){
-            alert(" altura errada ")
-           }
+  //define limites para peso e altura
+  
+  if(peso <= 0 || peso >= 1000){
+    alert("peso-inválido")
+    var pesoInvalido
+    tdImc.textContent = "peso-invalido";
+  }
+  if(altura <= 0 || altura >= 4.00){
+    alert("altura-inválida")
+    var alturaInvalida
+    tdImc.textContent = "altura-invalida";
+  }
+}
