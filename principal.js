@@ -30,7 +30,7 @@ for(var i = 0; i < pacientes.length; i++){
 
   if (pesoValido && alturaValida){
     var tdImc = paciente.querySelector(".info-imc");
-    tdImc.textContent = imc;
+    tdImc.textContent = imc.toFixed(1);
   }
 
   //define limites para peso e altura
@@ -39,6 +39,7 @@ for(var i = 0; i < pacientes.length; i++){
     alert("peso-inválido")
     var pesoInvalido
     tdImc.textContent = "peso-invalido";
+    paciente.style.backgroundColor = "red";
   }
   if(altura <= 0 || altura >= 4.00){
     alert("altura-inválida")
