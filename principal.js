@@ -39,11 +39,19 @@ for(var i = 0; i < pacientes.length; i++){
     alert("peso-inválido")
     var pesoInvalido
     tdImc.textContent = "peso-invalido";
-    paciente.style.backgroundColor = "red";
+    paciente.classList.add("campo-invalido");
   }
   if(altura <= 0 || altura >= 4.00){
     alert("altura-inválida")
     var alturaInvalida
     tdImc.textContent = "altura-invalida";
+    paciente.classList.add("campo-invalido");
   }
+}
+
+//clicar no titulo e fazer alguma desgraça
+sigma.addEventListener('click', zap);
+
+function zap (){
+  alert("ta procurando o guê")
 }
