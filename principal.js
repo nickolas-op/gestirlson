@@ -83,13 +83,24 @@ var alturaTd = document.createElement("td");
 var gorduraTd = document.createElement("td");
 var imcTd = document.createElement("td");
 
+//adicciona a desgraça toda
+
 nomeTd.textContent = nome;
 pesoTd.textContent = peso;
 alturaTd.textContent = altura;
 gorduraTd.textContent = gordura;
 imcTd.textContent = imc;
 
+//coloca a porra toda na tela
+
+pacienteTr.appendChild(nomeTd);
+pacienteTr.appendChild(pesoTd);
+pacienteTr.appendChild(alturaTd)
+pacienteTr.appendChild(gorduraTd);
+pacienteTr.appendChild(imcTd);
+
+var tabela = document.querySelector("#tabela-pacientes");
+tabela.appendChild(pacienteTr);
+
 });
-
-
 
